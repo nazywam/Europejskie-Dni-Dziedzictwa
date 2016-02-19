@@ -11,7 +11,7 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
+maven { url 'http://repo.kontakt.io/repository/internal/' }
 allprojects {
     repositories {
         jcenter()

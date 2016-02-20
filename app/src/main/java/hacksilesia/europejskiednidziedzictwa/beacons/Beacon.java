@@ -102,7 +102,6 @@ public class Beacon implements ProximityManager.ProximityListener {
 
             @Override
             public void onConnectionFailure() {
-
             }
         });
     }

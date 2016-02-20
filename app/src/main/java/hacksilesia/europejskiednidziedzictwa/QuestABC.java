@@ -1,12 +1,19 @@
 package hacksilesia.europejskiednidziedzictwa;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Looper;
+import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.kontakt.sdk.android.ble.configuration.ActivityCheckConfiguration;
 import com.kontakt.sdk.android.ble.configuration.ForceScanConfiguration;
@@ -25,6 +32,8 @@ import com.kontakt.sdk.android.common.profile.RemoteBluetoothDevice;
 import com.kontakt.sdk.android.manager.KontaktProximityManager;
 
 import java.util.List;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 public class QuestABC extends AppCompatActivity implements ProximityManager.ProximityListener {
     private static final String TAG = "BEACONY";
@@ -102,13 +111,48 @@ public class QuestABC extends AppCompatActivity implements ProximityManager.Prox
             case DEVICES_UPDATE:
                 Log.d(TAG, "updated beacons");
                 //to powinnismy sprawdzic czy to odpowiednii beacon i wysunąc menu
+                //okienko
+                /*
+                final QuestABC that = this;
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(that);
+                        builder.setMessage(R.string.dialog_message)
+                                .setTitle(R.string.dialog_title);
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                    }
+                });
+                */
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        TextView view = (TextView) findViewById(R.id.beacon_status);
+                        view.setText(R.string.beacon_in_range);
+                    }
+                });
                 break;
             case DEVICE_LOST:
                 Log.d(TAG, "lost device");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        TextView view = (TextView) findViewById(R.id.beacon_status);
+                        view.setText(R.string.beacon_not_in_range);
+                    }
+                });
                 break;
             case SPACE_ABANDONED:
                 //opuszczamy nasz region schowaj menu
                 Log.d(TAG, "namespace or region abandoned");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        TextView view = (TextView) findViewById(R.id.beacon_status);
+                        view.setText("namespace or region abandoned");
+                    }
+                });
                 break;
         }
     }

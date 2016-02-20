@@ -4,4 +4,6 @@
     <string name="title_activity_splash">Splash</string>
     <string name="title_activity_quest_abc">QuestABC</string>
     <string name="kontakt_api_key">asdf</string>
+    <string name="beacon_in_range">Beacon in range</string>
+    <string name="beacon_not_in_range">Beacon not in range</string>
 </resources>

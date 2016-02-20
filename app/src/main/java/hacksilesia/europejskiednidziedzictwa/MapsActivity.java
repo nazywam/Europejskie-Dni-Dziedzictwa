@@ -1,8 +1,11 @@
 package hacksilesia.europejskiednidziedzictwa;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.UserHandle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +23,7 @@ import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import android.support.v4.content.ContextCompat;
 
 import hacksilesia.europejskiednidziedzictwa.mapsparser.*;
 
@@ -46,6 +50,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mMap.setMyLocationEnabled(true);
+        } else {
+            // Show rationale and request permission.
+        }
+
 /*
         for(MapPath mp : parser.getUserHandler().mapPaths)
         {
@@ -65,7 +77,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         for(MapPath mp : parser.getUserHandler().mapPaths){
             PolylineOptions o = new PolylineOptions();
-            o.width(5);
+            o.width(7).color(0xFF00FF00);
 
             Log.d("PATHEEE", "path");
 

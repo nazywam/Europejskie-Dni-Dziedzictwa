@@ -27,7 +27,7 @@
 ![alt text][tworzeniemapy]
 
 ##### Ikonki punktów dopasowane do atrakcji
-![iko2] ![iko3] ![iko3] ![iko4] ![iko5] ![iko6]
+![iko2] ![iko3] ![iko3] ![iko4] 
 
 ##### Screen
 ![screen1]

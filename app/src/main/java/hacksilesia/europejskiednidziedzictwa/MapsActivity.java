@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -100,5 +101,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 dialog.show();
             }
         });
+    }
+
+    public void onStartBtnClicked(View view) {
+        View txt = findViewById(R.id.welcomeMessage);
+        txt.animate().translationX(-300).alpha(0);
+        view.animate().translationX(-300).alpha(0);
     }
 }

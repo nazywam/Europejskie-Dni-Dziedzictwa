@@ -165,14 +165,26 @@
 			<name>riddle</name>
 			<Placemark>
 				<name>Zagadka 1</name>
-				<description><![CDATA[description: Jestem zagadkowym potworem!<br>Question: Coś TAm]]></description>
+				<description><![CDATA[description: Jestem zagadkowym potworem!<br>Question: Ile słoni ma żarówka<br>Ans1: 0<br>Ans2: 1<br>Ans3: wszystkie<br>CorrectAns: 1]]></description>
 				<styleUrl>#icon-503-3F5BA9</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
 						<value>Jestem zagadkowym potworem!</value>
 					</Data>
 					<Data name='Question'>
-						<value>Coś TAm</value>
+						<value>Ile słoni ma żarówka</value>
+					</Data>
+					<Data name='Ans1'>
+						<value>0</value>
+					</Data>
+					<Data name='Ans2'>
+						<value>1</value>
+					</Data>
+					<Data name='Ans3'>
+						<value>wszystkie</value>
+					</Data>
+					<Data name='CorrectAns'>
+						<value>1</value>
 					</Data>
 				</ExtendedData>
 				<Point>
@@ -181,7 +193,7 @@
 			</Placemark>
 			<Placemark>
 				<name>Zagadka 2</name>
-				<description><![CDATA[description: Co tak sterczysz<br>Question: Coś tam innego]]></description>
+				<description><![CDATA[description: Co tak sterczysz<br>Question: Coś tam innego<br>Ans1: Tak<br>Ans2: Może<br>Ans3: Nie<br>CorrectAns: 3]]></description>
 				<styleUrl>#icon-503-3F5BA9</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -189,6 +201,18 @@
 					</Data>
 					<Data name='Question'>
 						<value>Coś tam innego</value>
+					</Data>
+					<Data name='Ans1'>
+						<value>Tak</value>
+					</Data>
+					<Data name='Ans2'>
+						<value>Może</value>
+					</Data>
+					<Data name='Ans3'>
+						<value>Nie</value>
+					</Data>
+					<Data name='CorrectAns'>
+						<value>3</value>
 					</Data>
 				</ExtendedData>
 				<Point>

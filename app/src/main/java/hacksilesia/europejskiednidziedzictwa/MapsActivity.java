@@ -2,6 +2,7 @@ package hacksilesia.europejskiednidziedzictwa;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
@@ -10,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViewsService;
 
@@ -41,9 +43,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private MapParser parser;
 
-    private View quizView;
-    private View monumentView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,11 +55,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-        quizView = findViewById(R.id.quiz_view);
-        monumentView = findViewById(R.id.monument_view);
-        quizView.setVisibility(View.GONE);
-        monumentView.setVisibility(View.GONE);
     }
 
     @Override
@@ -132,13 +126,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MapsActivity.this);
-
-                builder.setMessage(riddle.description)
-                        .setTitle("Zagadka!");
-
-                AlertDialog dialog = builder.create();
-                dialog.show();
+                Intent intent = new Intent(MapsActivity.this, Quiz.class);
+                intent.putExtra("ZAGADKA", riddle.description);
+                intent.putExtra("ANS1", riddle.answer[0]);
+                intent.putExtra("ANS2", riddle.answer[1]);
+                intent.putExtra("ANS3", riddle.answer[2]);
+                startActivityForResult(intent, 1);
             }
         });
     }
@@ -148,4 +141,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         txt.animate().translationX(-300).alpha(0);
         view.animate().translationX(-300).alpha(0);
     }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK){
+                int  stredittext=data.getIntExtra("edittextvalue", 1);
+                Log.d("HEJ", "clicked! "+ stredittext);
+            }
+        }
+    }
+
 }

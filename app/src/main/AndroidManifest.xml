@@ -35,22 +35,16 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <service
             android:name="com.kontakt.sdk.android.ble.service.ProximityService"
             android:exported="false" />
 
         <activity
-            android:name=".Splash"
-            android:label="@string/title_activity_splash"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
             android:name=".QuestABC"
             android:label="@string/title_activity_quest_abc"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SlideshowActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -60,6 +54,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Quiz"
+            android:label="@string/title_activity_quiz"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

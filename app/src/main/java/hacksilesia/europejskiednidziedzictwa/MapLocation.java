@@ -1,12 +1,11 @@
 package hacksilesia.europejskiednidziedzictwa;
 
-public class MapLocation {
-    MapPoint mapPoint;
+public class MapLocation extends MapPoint{
     int index;
     String description;
 
     public MapLocation(float lat, float lon, int i){
-        mapPoint = new MapPoint(lat, lon);
+        super(lat, lon);
         index = i;
     }
 }

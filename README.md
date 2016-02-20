@@ -1,6 +1,6 @@
 ### HACK SILESIA #2 - ZNAJDŹ MNIE ###
 
-img align = "center" src ="./screens/logo.png" />
+<img align = "center" src ="./screens/logo.png" />
 
 
 * Do kogo kierowana jest ta aplikacja

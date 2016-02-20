@@ -50,8 +50,6 @@ public class UserHandler extends DefaultHandler {
             } else {
                 String nodeName = new String(ch, start, length);
                 if(folderType.equalsIgnoreCase("points")){
-
-
                     Log.d("PATHEEE", "New Point with name: " + nodeName + "\n");
                 } else if(folderType.equalsIgnoreCase("path")){
                     Log.d("PATHEEE", "New Path segment: " + nodeName + "\n");
@@ -65,20 +63,26 @@ public class UserHandler extends DefaultHandler {
         if(coordinatesTag == "open"){
             Log.d("PATHEEE", "Coords: " + new String(ch, start, length) + "\n");
 
-            String[] loc = new String(ch, start, length).split(",");
 
             if(folderType.equalsIgnoreCase("points")){
+                String[] loc = new String(ch, start, length).split(",");
+
                 MapLocation l = new MapLocation(Float.parseFloat(loc[0]), Float.parseFloat(loc[1]), locationIterator);
                 mapLocations.add(l);
                 locationIterator++;
             }
             if(folderType.equalsIgnoreCase("path")){
-                for(int i=0; i<loc.length/3; i++) {
-                    MapPoint p = new MapPoint(Float.parseFloat(loc[i*3]), Float.parseFloat(loc[i*3+1]));
+                String[] ps = new String(ch, start, length).split(" ");
+
+                for(int i=0; i<ps.length; i++) {
+                    String[] q = ps[i].split(",");
+                    MapPoint p = new MapPoint(Float.parseFloat(q[0]), Float.parseFloat(q[1]));
                     mapPaths.get(mapPaths.size() - 1).coordinates.add(p);
                 }
             }
             if(folderType.equalsIgnoreCase("riddle")){
+                String[] loc = new String(ch, start, length).split(",");
+
                 MapRiddle r = new MapRiddle(Float.parseFloat(loc[0]), Float.parseFloat(loc[1]), riddleIterator);
                 riddleIterator++;
                 mapRiddles.add(r);

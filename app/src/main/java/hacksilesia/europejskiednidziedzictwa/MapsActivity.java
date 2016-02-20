@@ -60,8 +60,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.addPolyline(rectOptions);
         }
         */
-        for(MapPoint mp : parser.getUserHandler().mapLocations)
-            mMap.addMarker(new MarkerOptions().position(new LatLng(mp.latitude, mp.longitude)));
+        for(MapPoint mp : parser.getUserHandler().mapLocations){
+            mMap.addMarker(new MarkerOptions().position(new LatLng(mp.longitude, mp.latitude)));
+        }
+        for(MapPath mp : parser.getUserHandler().mapPaths){
+            PolylineOptions o = new PolylineOptions();
+            o.width(5);
+
+            Log.d("PATHEEE", "path");
+
+            for(MapPoint p : mp.coordinates){
+                o.add(new LatLng(p.longitude, p.latitude));
+            }
+            mMap.addPolyline(o);
+        }
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(37.35, -122.0)));
         //mMap.moveCamera(CameraUpdateFactory.zoomTo(15.0f));
     }

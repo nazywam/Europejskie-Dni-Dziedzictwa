@@ -94,7 +94,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             AssetManager am = getAssets();
             InputStream is = null;
             try {
-               is = am.open(mr.imagePath);
+               is = am.open("quiz_icon.png");
             } catch (IOException e) {
                 e.printStackTrace();
             }

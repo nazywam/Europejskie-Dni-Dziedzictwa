@@ -20,6 +20,7 @@ public class UserHandler extends DefaultHandler {
     String dataTag = "close";
     String valueTag = "close";
 
+
     public ArrayList<MapLocation> mapLocations = new ArrayList<MapLocation>();
     public ArrayList<MapPath> mapPaths = new ArrayList<MapPath>();
     public ArrayList<MapRiddle> mapRiddles = new ArrayList<MapRiddle>();
@@ -65,7 +66,6 @@ public class UserHandler extends DefaultHandler {
                     MapLocation l = new MapLocation(nodeName, locationIterator);
                     mapLocations.add(l);
                     locationIterator++;
-
                 } else if(folderType.equalsIgnoreCase("path")) {
                     MapPath p = new MapPath(pathsIterator);
                     mapPaths.add(p);
@@ -78,7 +78,7 @@ public class UserHandler extends DefaultHandler {
             }
         }
         if(valueTag == "open"){
-            if(dataName.equalsIgnoreCase("descrtiption")){
+            if(dataName.equalsIgnoreCase("description")){
                 if(folderType.equalsIgnoreCase("points")){
                     mapLocations.get(mapLocations.size()-1).description = new String(ch, start, length);
                 } else if(folderType.equalsIgnoreCase("riddle")){
@@ -86,6 +86,16 @@ public class UserHandler extends DefaultHandler {
                 }
             } else if(dataName.equalsIgnoreCase("beaconId")){
                 mapLocations.get(mapLocations.size()-1).beaconId = new String(ch, start, length);
+            } else if(dataName.equalsIgnoreCase("Question")){
+                mapRiddles.get(mapRiddles.size()-1).question = new String(ch, start, length);
+            } else if(dataName.equalsIgnoreCase("Ans1")){
+                mapRiddles.get(mapRiddles.size()-1).answer[0] = new String(ch, start, length);
+            } else if(dataName.equalsIgnoreCase("Ans2")){
+                mapRiddles.get(mapRiddles.size()-1).answer[1] = new String(ch, start, length);
+            } else if(dataName.equalsIgnoreCase("Ans3")){
+                mapRiddles.get(mapRiddles.size()-1).answer[2] = new String(ch, start, length);
+            } else if(dataName.equalsIgnoreCase("CorrectAns")){
+                mapRiddles.get(mapRiddles.size()-1).correctAns = Integer.parseInt(new String(ch, start, length));
             }
         }
 
@@ -97,7 +107,6 @@ public class UserHandler extends DefaultHandler {
             }
             if(folderType.equalsIgnoreCase("path")){
                 String[] ps = new String(ch, start, length).split(" ");
-
                 for(int i=0; i<ps.length; i++) {
                     String[] q = ps[i].split(",");
                     MapPoint p = new MapPoint(Float.parseFloat(q[0]), Float.parseFloat(q[1]));

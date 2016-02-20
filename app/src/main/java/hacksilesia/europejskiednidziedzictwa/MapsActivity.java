@@ -77,17 +77,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         for(MapPath mp : parser.getUserHandler().mapPaths){
             PolylineOptions o = new PolylineOptions();
-            o.width(7).color(0xFF00FF00);
-
-            Log.d("PATHEEE", "path");
+            o.width(10).color(0xFF00AAAA);
 
             for(MapPoint p : mp.coordinates){
                 o.add(new LatLng(p.longitude, p.latitude));
             }
             mMap.addPolyline(o);
         }
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(37.35, -122.0)));
-        //mMap.moveCamera(CameraUpdateFactory.zoomTo(15.0f));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(50.2644568, 18.9956939)));
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(17.0f));
     }
 }

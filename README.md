@@ -24,4 +24,4 @@ Tworzenie map za pomocą google maps!
 
 ![alt text][tworzeniemapy]
 
-[tworzeniemapy] ./screens/konstruowanietrasy.png
+[tworzeniemapy]: ./screens/konstruowanietrasy.png

@@ -1,6 +1,7 @@
 ### HACK SILESIA #2 - ZNAJDŹ MNIE ###
 
-![alt text][logo]
+<div style="text-align:center"><img src ="./screens/logo.png" /></div>
+
 
 * Do kogo kierowana jest ta aplikacja
   * do dzieci i rodzin z okolic Katowic, które chcą lepiej poznać region w którym mieszkają

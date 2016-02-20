@@ -13,13 +13,14 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class Quiz extends AppCompatActivity {
-
+    int correct;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
         String zagadka = "", ans1 = "", ans2 = "", ans3 = "";
+        correct = 0;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras != null) {
@@ -27,12 +28,14 @@ public class Quiz extends AppCompatActivity {
                 ans1 = extras.getString("ANS1");
                 ans2 = extras.getString("ANS2");
                 ans3 = extras.getString("ANS3");
+                correct = extras.getInt("CORRECT");
             }
         } else {
             zagadka = (String) savedInstanceState.getSerializable("ZAGADKA");
             ans1 = (String) savedInstanceState.getSerializable("ANS1");
             ans2 = (String) savedInstanceState.getSerializable("ANS2");
             ans3 = (String) savedInstanceState.getSerializable("ANS3");
+            correct = (int) savedInstanceState.getSerializable("CORRECT");
         }
         TextView zv = (TextView)findViewById(R.id.zagadka);
         zv.setText(zagadka);
@@ -46,19 +49,28 @@ public class Quiz extends AppCompatActivity {
 
     public void button1Clicked(View view) {
         Intent intent = new Intent();
+        if(correct == 1)
         intent.putExtra("edittextvalue", 1);
+        else
+            intent.putExtra("edittextvalue", 2);
         setResult(RESULT_OK, intent);
         finish();
     }
     public void button2Clicked(View view) {
         Intent intent = new Intent();
-        intent.putExtra("edittextvalue",2);
+        if(correct == 2)
+            intent.putExtra("edittextvalue", 1);
+        else
+            intent.putExtra("edittextvalue", 2);
         setResult(RESULT_OK, intent);
         finish();
     }
     public void button3Clicked(View view) {
         Intent intent = new Intent();
-        intent.putExtra("edittextvalue",3);
+        if(correct == 3)
+            intent.putExtra("edittextvalue", 1);
+        else
+            intent.putExtra("edittextvalue", 2);
         setResult(RESULT_OK, intent);
         finish();
     }

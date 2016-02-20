@@ -7,7 +7,7 @@ public class MapRiddle extends MapLocation {
 
     String question;
     public String[] answer = {"", "", ""};
-    int correctAns;
+    public int correctAns;
 
     public MapRiddle(String n, int i){
         super(n, i);

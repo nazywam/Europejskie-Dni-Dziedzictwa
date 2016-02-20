@@ -131,6 +131,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 intent.putExtra("ANS1", riddle.answer[0]);
                 intent.putExtra("ANS2", riddle.answer[1]);
                 intent.putExtra("ANS3", riddle.answer[2]);
+                intent.putExtra("CORRECT", riddle.correctAns);
                 startActivityForResult(intent, 1);
             }
         });
@@ -147,7 +148,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (requestCode == 1) {
             if(resultCode == RESULT_OK){
                 int  stredittext=data.getIntExtra("edittextvalue", 1);
-                Log.d("HEJ", "clicked! "+ stredittext);
+                if(stredittext == 1) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("Dobra odpowiedź")
+                            .setTitle("BRAWO");
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
+                else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("Niestety, pomyliłeś się")
+                            .setTitle(";(");
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
             }
         }
     }

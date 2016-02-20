@@ -13,8 +13,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-    android:layout_height="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/header"
+            android:id="@+id/header"
+            android:background="@color/white"/>
 
         <TextView
             android:id="@+id/welcomeMessage"
@@ -26,9 +32,10 @@
             android:padding="25dp"
             android:textColor="@color/white"
             android:text="@string/welcome_message"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textAlignment="center"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/header"/>
 
         <Button
             android:layout_width="match_parent"
@@ -43,15 +50,7 @@
             android:textStyle="bold"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/header"/>
-    </LinearLayout>
+
 
 
 </RelativeLayout>

@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
+import android.widget.RemoteViewsService;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -54,7 +56,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         for(MapLocation mp : parser.getUserHandler().mapLocations){
-            Marker m = mMap.addMarker(new MarkerOptions().title(mp.name).snippet(mp.description).position(new LatLng(mp.longitude, mp.latitude)));
+            Marker m = mMap.addMarker(new MarkerOptions().title(mp.name).icon(BitmapDescriptorFactory.fromAsset(mp.imagePath)).snippet(mp.description).position(new LatLng(mp.longitude, mp.latitude)));
         }
         for(MapPath mp : parser.getUserHandler().mapPaths){
 
@@ -67,7 +69,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         for(MapRiddle mr : parser.getUserHandler().mapRiddles){
-            Marker m = mMap.addMarker(new MarkerOptions().title(mr.name).snippet(mr.description).position(new LatLng(mr.longitude, mr.latitude)));
+            Marker m = mMap.addMarker(new MarkerOptions().title(mr.name).icon(BitmapDescriptorFactory.fromAsset(mr.imagePath)).snippet(mr.description).position(new LatLng(mr.longitude, mr.latitude)));
         }
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(50.2644568, 18.9956939)));

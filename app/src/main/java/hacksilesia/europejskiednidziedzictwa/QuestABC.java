@@ -33,9 +33,6 @@ public class QuestABC extends AppCompatActivity implements ProximityManager.Prox
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        KontaktSDK.initialize(this)
-                .setDebugLoggingEnabled(com.kontakt.sdk.android.common.BuildConfig.DEBUG)
-                .setLogLevelEnabled(LogLevel.DEBUG, true);
         setContentView(R.layout.activity_quest_abc);
         KontaktSDK.initialize("RGfcELVJXbOBOnjBuuxRMKeflkEyqEfs");
         proximityManager = new KontaktProximityManager(this);

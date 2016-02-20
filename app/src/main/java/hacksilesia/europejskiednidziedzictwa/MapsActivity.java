@@ -1,32 +1,26 @@
 package hacksilesia.europejskiednidziedzictwa;
 
 import android.Manifest;
-import android.content.Intent;
+import android.app.AlertDialog;
 import android.content.pm.PackageManager;
-import android.os.Handler;
-import android.os.UserHandle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.Circle;
-import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polygon;
-import com.google.android.gms.maps.model.PolygonOptions;
-import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
-import android.support.v4.content.ContextCompat;
 
-import hacksilesia.europejskiednidziedzictwa.mapsparser.*;
+import hacksilesia.europejskiednidziedzictwa.mapsparser.MapLocation;
+import hacksilesia.europejskiednidziedzictwa.mapsparser.MapParser;
+import hacksilesia.europejskiednidziedzictwa.mapsparser.MapPath;
+import hacksilesia.europejskiednidziedzictwa.mapsparser.MapPoint;
+import hacksilesia.europejskiednidziedzictwa.mapsparser.MapRiddle;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -77,5 +71,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(50.2644568, 18.9956939)));
         mMap.moveCamera(CameraUpdateFactory.zoomTo(17.0f));
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                for (MapRiddle mr : parser.getUserHandler().mapRiddles) {
+                    if (mr.longitude == marker.getPosition().latitude &&
+                            mr.latitude == marker.getPosition().longitude) {
+                        showRiddle(mr);
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+    }
+
+    private void showRiddle(final MapRiddle riddle) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MapsActivity.this);
+
+                builder.setMessage(riddle.description)
+                        .setTitle("Zagadka!");
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
     }
 }

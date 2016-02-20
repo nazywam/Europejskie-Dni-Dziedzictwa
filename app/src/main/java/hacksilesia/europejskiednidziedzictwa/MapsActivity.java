@@ -26,14 +26,13 @@ import hacksilesia.europejskiednidziedzictwa.mapsparser.*;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private UserHandler userHandler;
+    private MapParser parser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        MapParser parser = new MapParser();
-        userHandler = parser.userhandler;
+        parser = new MapParser(this);
 
         setContentView(R.layout.activity_maps);
 
@@ -44,26 +43,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        Log.d("PATHEEE", "size: " + userHandler.mapLocations.size());
-
-        for(MapPath mp : userHandler.mapPaths)
+/*
+        for(MapPath mp : parser.getUserHandler().mapPaths)
         {
             Log.d("PATHEEE", "path");
             PolylineOptions rectOptions = new PolylineOptions();
+            Log.d("PATHEEEs", "size: " + mp.coordinates.size());
             for(MapPoint ml : mp.coordinates)
             {
                 rectOptions.add(new LatLng(ml.latitude, ml.longitude));
@@ -71,6 +59,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
             mMap.addPolyline(rectOptions);
         }
+        */
+        for(MapPoint mp : parser.getUserHandler().mapLocations)
+            mMap.addMarker(new MarkerOptions().position(new LatLng(mp.latitude, mp.longitude)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(37.35, -122.0)));
+        //mMap.moveCamera(CameraUpdateFactory.zoomTo(15.0f));
     }
 }

@@ -1,6 +1,11 @@
 package hacksilesia.europejskiednidziedzictwa.mapsparser;
 
+import android.app.Activity;
+import android.app.Application;
+import android.util.Log;
+
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import javax.xml.parsers.SAXParser;
@@ -11,11 +16,11 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class MapParser {
-    public UserHandler userhandler;
+    private UserHandler userhandler;
 
-    public MapParser(){
+    public MapParser(Activity ac){
         try {
-            File inputFile = new File("Example.kml");
+            InputStream inputFile = ac.getAssets().open("Example.kml");
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             userhandler = new UserHandler();
@@ -23,5 +28,9 @@ public class MapParser {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public UserHandler getUserHandler() {
+        return userhandler;
     }
 }

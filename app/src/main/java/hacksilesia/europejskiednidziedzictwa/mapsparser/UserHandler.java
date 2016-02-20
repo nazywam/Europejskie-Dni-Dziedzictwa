@@ -1,5 +1,7 @@
 package hacksilesia.europejskiednidziedzictwa.mapsparser;
 
+import android.util.Log;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -25,6 +27,7 @@ public class UserHandler extends DefaultHandler {
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        Log.d("PATHEEE", "start");
         if (qName.equalsIgnoreCase("folder")) {
             folderTag = "open";
         }
@@ -43,15 +46,15 @@ public class UserHandler extends DefaultHandler {
         if (nameTag.equalsIgnoreCase("open") && folderTag == "open"){
             if(placeMarkerTag == "close"){
                 folderType = new String(ch, start, length);
-                //System.out.print("FolderName = "+ folderType + "\n");
+                Log.d("PATHEEE", "FolderName = "+ folderType + "\n");
             } else {
                 String nodeName = new String(ch, start, length);
                 if(folderType.equalsIgnoreCase("points")){
 
 
-                    System.out.print("New Point with name: " + nodeName + "\n");
+                    Log.d("PATHEEE", "New Point with name: " + nodeName + "\n");
                 } else if(folderType.equalsIgnoreCase("path")){
-                    System.out.print("New Path segment: " + nodeName + "\n");
+                    Log.d("PATHEEE", "New Path segment: " + nodeName + "\n");
 
                     MapPath p = new MapPath(pathsIterator);
                     mapPaths.add(p);
@@ -60,7 +63,7 @@ public class UserHandler extends DefaultHandler {
             }
         }
         if(coordinatesTag == "open"){
-            System.out.print("Coords: " + new String(ch, start, length) + "\n");
+            Log.d("PATHEEE", "Coords: " + new String(ch, start, length) + "\n");
 
             String[] loc = new String(ch, start, length).split(",");
 

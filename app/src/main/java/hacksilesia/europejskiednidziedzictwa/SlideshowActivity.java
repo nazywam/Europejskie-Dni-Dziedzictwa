@@ -10,16 +10,17 @@ import android.view.View;
 public class SlideshowActivity extends AppCompatActivity {
 
     private View[] slides;
-
+    private final int numOfSlides = 3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slideshow);
-        slides = new View[2];
+        slides = new View[numOfSlides];
         slides[0] = findViewById(R.id.slide1);
         slides[1] = findViewById(R.id.slide2);
-        slides[0].setAlpha(0);
-        slides[1].setAlpha(0);
+        slides[2] = findViewById(R.id.slide3);
+        for(int i = 0; i < numOfSlides; ++i)
+            slides[i].setAlpha(0);
         fadeIn(0);
     }
 

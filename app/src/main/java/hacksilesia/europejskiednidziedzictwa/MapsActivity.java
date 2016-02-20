@@ -83,7 +83,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         for(MapPath mp : parser.getUserHandler().mapPaths){
 
             PolylineOptions o = new PolylineOptions();
-            o.width(10).color(0xFF00AAAA);
+            o.width(10).color(0x3068FF);
             for(MapPoint p : mp.coordinates){
                 o.add(new LatLng(p.longitude, p.latitude));
             }
@@ -104,7 +104,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             Marker m = mMap.addMarker(new MarkerOptions().title(mr.name).icon(BitmapDescriptorFactory.fromBitmap(scaled)).snippet(mr.description).position(new LatLng(mr.longitude, mr.latitude)));
         }
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(50.2644568, 18.9956939)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(50.26785, 19.12195)));
         mMap.moveCamera(CameraUpdateFactory.zoomTo(17.0f));
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {

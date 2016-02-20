@@ -7,7 +7,7 @@
 			<name>points</name>
 			<Placemark>
 				<name>Start</name>
-				<description><![CDATA[description: Przygotuj się!<br>BeaconId: R1hw<br>Image: cat.png]]></description>
+				<description><![CDATA[description: Przygotuj się!<br>BeaconId: R1hw<br>Image: castle1.png]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -17,7 +17,7 @@
 						<value>R1hw</value>
 					</Data>
 					<Data name='Image'>
-						<value>cat.png</value>
+						<value>castle1.png</value>
 					</Data>
 				</ExtendedData>
 				<Point>
@@ -26,7 +26,7 @@
 			</Placemark>
 			<Placemark>
 				<name>Idzie dobrze...</name>
-				<description><![CDATA[description: Całkiem niezły początek!<br>BeaconId: 04EJ<br>Image: cat.png]]></description>
+				<description><![CDATA[description: Całkiem niezły początek!<br>BeaconId: 04EJ<br>Image: church1.png]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -36,7 +36,7 @@
 						<value>04EJ</value>
 					</Data>
 					<Data name='Image'>
-						<value>cat.png</value>
+						<value>church1.png</value>
 					</Data>
 				</ExtendedData>
 				<Point>
@@ -45,7 +45,7 @@
 			</Placemark>
 			<Placemark>
 				<name>Prawie u celu</name>
-				<description><![CDATA[description: Nie poddawaj się!<br>BeaconId: qLWV<br>Image: cat.png]]></description>
+				<description><![CDATA[description: Nie poddawaj się!<br>BeaconId: qLWV<br>Image: castle2.png]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -55,7 +55,7 @@
 						<value>qLWV</value>
 					</Data>
 					<Data name='Image'>
-						<value>cat.png</value>
+						<value>castle2.png</value>
 					</Data>
 				</ExtendedData>
 				<Point>
@@ -64,7 +64,7 @@
 			</Placemark>
 			<Placemark>
 				<name>Koniec!</name>
-				<description><![CDATA[description: Jesteś zwyciężcą<br>BeaconId: ekri<br>Image: cat.png]]></description>
+				<description><![CDATA[description: Jesteś zwyciężcą<br>BeaconId: ekri<br>Image: church2.png]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -74,7 +74,7 @@
 						<value>ekri</value>
 					</Data>
 					<Data name='Image'>
-						<value>cat.png</value>
+						<value>church2.png</value>
 					</Data>
 				</ExtendedData>
 				<Point>
@@ -83,7 +83,7 @@
 			</Placemark>
 			<Placemark>
 				<name>Czy na pewno?</name>
-				<description><![CDATA[description: ;)<br>BeaconId: <br>Image: cat.png]]></description>
+				<description><![CDATA[description: ;)<br>BeaconId: <br>Image: church3.png]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -93,7 +93,7 @@
 						<value></value>
 					</Data>
 					<Data name='Image'>
-						<value>cat.png</value>
+						<value>church3.png</value>
 					</Data>
 				</ExtendedData>
 				<Point>

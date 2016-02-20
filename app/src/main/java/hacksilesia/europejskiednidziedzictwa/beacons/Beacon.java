@@ -56,16 +56,14 @@ public class Beacon implements ProximityManager.ProximityListener {
                 break;
             case DEVICE_DISCOVERED:
                 Log.d(TAG, "found new beacon");
+                for (RemoteBluetoothDevice i: deviceList) {
+                    Log.d("Discovered "+i.getUniqueId(), "");
+                }
                 callbacks.onDeviceDiscovered();
+
                 break;
             case DEVICES_UPDATE:
                 Log.d(TAG, "updated beacons");
-                for (RemoteBluetoothDevice i: deviceList)
-                {
-                  Log.d("TEST"+i.getUniqueId(), "TEST");
-                }
-                //to powinnismy sprawdzic czy to odpowiednii beacon i wysunąc menu
-                //okienko
                 /*
                 final QuestABC that = this;
                 runOnUiThread(new Runnable() {
@@ -102,7 +100,6 @@ public class Beacon implements ProximityManager.ProximityListener {
 
             @Override
             public void onConnectionFailure() {
-
             }
         });
     }

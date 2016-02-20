@@ -9,14 +9,16 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.ArrayList;
 
 public class UserHandler extends DefaultHandler {
-
     String folderType = "";
+    String dataName = "";
 
     String folderTag = "close";
     String nameTag = "close";
     String placeMarkerTag = "close";
     String coordinatesTag = "close";
     String descriptionTag = "close";
+    String dataTag = "close";
+    String valueTag = "close";
 
     public ArrayList<MapLocation> mapLocations = new ArrayList<MapLocation>();
     public ArrayList<MapPath> mapPaths = new ArrayList<MapPath>();
@@ -44,13 +46,19 @@ public class UserHandler extends DefaultHandler {
         if(qName.equalsIgnoreCase("description")){
             descriptionTag= "open";
         }
+        if(qName.equalsIgnoreCase("value")){
+            valueTag= "open";
+        }
+        if(qName.equalsIgnoreCase("data")){
+            dataTag= "open";
+            dataName = attributes.getValue(0);
+        }
     }
     @Override
     public void characters(char ch[], int start, int length) throws SAXException {
         if (nameTag.equalsIgnoreCase("open") && folderTag == "open"){
             if(placeMarkerTag == "close"){
                 folderType = new String(ch, start, length);
-                Log.d("PATHEEE", "FolderName = "+ folderType + "\n");
             } else {
                 String nodeName = new String(ch, start, length);
                 if(folderType.equalsIgnoreCase("points")){
@@ -59,8 +67,6 @@ public class UserHandler extends DefaultHandler {
                     locationIterator++;
 
                 } else if(folderType.equalsIgnoreCase("path")) {
-                    Log.d("PATHEEE", "New Path segment: " + nodeName + "\n");
-
                     MapPath p = new MapPath(pathsIterator);
                     mapPaths.add(p);
                     pathsIterator++;
@@ -71,17 +77,19 @@ public class UserHandler extends DefaultHandler {
                 }
             }
         }
-        if(descriptionTag == "open"){
-            Log.d("USING", "DESCRIPTION"+nameTag);
-
-            if(folderType.equalsIgnoreCase("points")){
-                mapLocations.get(mapLocations.size()-1).description = new String(ch, start, length);
-            } else if(folderType.equalsIgnoreCase("riddle")){
-                mapRiddles.get(mapRiddles.size()-1).description = new String(ch, start, length);
+        if(valueTag == "open"){
+            if(dataName.equalsIgnoreCase("descrtiption")){
+                if(folderType.equalsIgnoreCase("points")){
+                    mapLocations.get(mapLocations.size()-1).description = new String(ch, start, length);
+                } else if(folderType.equalsIgnoreCase("riddle")){
+                    mapRiddles.get(mapRiddles.size()-1).description = new String(ch, start, length);
+                }
+            } else if(dataName.equalsIgnoreCase("beaconId")){
+                mapLocations.get(mapLocations.size()-1).beaconId = new String(ch, start, length);
             }
         }
-        if(coordinatesTag == "open"){
 
+        if(coordinatesTag == "open"){
             if(folderType.equalsIgnoreCase("points")){
                 String[] loc = new String(ch, start, length).split(",");
                 mapLocations.get(mapLocations.size()-1).latitude = Float.parseFloat(loc[0]);
@@ -121,6 +129,12 @@ public class UserHandler extends DefaultHandler {
         }
         if(qName.equalsIgnoreCase("description")){
             descriptionTag = "close";
+        }
+        if(qName.equalsIgnoreCase("data")){
+            dataTag = "close";
+        }
+        if(qName.equalsIgnoreCase("value")){
+            valueTag = "close";
         }
     }
 }

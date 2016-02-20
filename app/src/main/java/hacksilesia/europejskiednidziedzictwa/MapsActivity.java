@@ -56,9 +56,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             Marker m = mMap.addMarker(new MarkerOptions().title(mp.name).snippet(mp.description).position(new LatLng(mp.longitude, mp.latitude)));
         }
         for(MapPath mp : parser.getUserHandler().mapPaths){
+
             PolylineOptions o = new PolylineOptions();
             o.width(10).color(0xFF00AAAA);
-
             for(MapPoint p : mp.coordinates){
                 o.add(new LatLng(p.longitude, p.latitude));
             }

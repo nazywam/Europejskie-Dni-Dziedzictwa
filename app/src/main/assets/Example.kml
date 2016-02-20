@@ -4,42 +4,90 @@
 		<name>Example</name>
 		<description><![CDATA[]]></description>
 		<Folder>
-			<name>Points</name>
+			<name>points</name>
 			<Placemark>
 				<name>Start</name>
-				<description><![CDATA[Przygotuj się!]]></description>
+				<description><![CDATA[description: Przygotuj się!<br>BeaconId: R1hw]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='description'>
+						<value>Przygotuj się!</value>
+					</Data>
+					<Data name='BeaconId'>
+						<value>R1hw</value>
+					</Data>
+				</ExtendedData>
 				<Point>
 					<coordinates>18.9956939,50.2644568,0.0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
 				<name>Idzie dobrze...</name>
-				<description><![CDATA[Całkiem niezły początek!]]></description>
+				<description><![CDATA[description: Całkiem niezły początek!<br>BeaconId: 04EJ]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='description'>
+						<value>Całkiem niezły początek!</value>
+					</Data>
+					<Data name='BeaconId'>
+						<value>04EJ</value>
+					</Data>
+				</ExtendedData>
 				<Point>
 					<coordinates>18.9962626,50.2658833,0.0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
 				<name>Prawie u celu</name>
-				<description><![CDATA[Nie poddawaj się!]]></description>
+				<description><![CDATA[description: Nie poddawaj się!<br>BeaconId: qLWV]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='description'>
+						<value>Nie poddawaj się!</value>
+					</Data>
+					<Data name='BeaconId'>
+						<value>qLWV</value>
+					</Data>
+				</ExtendedData>
 				<Point>
 					<coordinates>18.9972925,50.2653552,0.0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
 				<name>Koniec!</name>
-				<description><![CDATA[Jesteś zwyciężcą]]></description>
+				<description><![CDATA[description: Jesteś zwyciężcą<br>BeaconId: ekri]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='description'>
+						<value>Jesteś zwyciężcą</value>
+					</Data>
+					<Data name='BeaconId'>
+						<value>ekri</value>
+					</Data>
+				</ExtendedData>
 				<Point>
 					<coordinates>18.9987409,50.2645871,0.0</coordinates>
 				</Point>
 			</Placemark>
+			<Placemark>
+				<name>Czy na pewno?</name>
+				<description><![CDATA[description: ;)<br>BeaconId: ]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='description'>
+						<value>;)</value>
+					</Data>
+					<Data name='BeaconId'>
+						<value></value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>19.0002429,50.2642442,0.0</coordinates>
+				</Point>
+			</Placemark>
 		</Folder>
 		<Folder>
-			<name>Path</name>
+			<name>path</name>
 			<Placemark>
 				<name>Directions from Start to Idzie dobrze...</name>
 				<styleUrl>#line-1267FF-5-nodesc</styleUrl>
@@ -64,7 +112,7 @@
 			</Placemark>
 		</Folder>
 		<Folder>
-			<name>Path</name>
+			<name>path</name>
 			<Placemark>
 				<name>Directions from Idzie dobrze... to Prawie u celu</name>
 				<styleUrl>#line-1267FF-5-nodesc</styleUrl>
@@ -89,7 +137,7 @@
 			</Placemark>
 		</Folder>
 		<Folder>
-			<name>Path</name>
+			<name>path</name>
 			<Placemark>
 				<name>Directions from Prawie u celu to Koniec!</name>
 				<styleUrl>#line-1267FF-5-nodesc</styleUrl>
@@ -114,27 +162,68 @@
 			</Placemark>
 		</Folder>
 		<Folder>
-			<name>Riddle</name>
+			<name>riddle</name>
 			<Placemark>
 				<name>Zagadka 1</name>
-				<description><![CDATA[Ile ogonów ma smok który ma cztery ogony?<br>a) 0<br>b) Odpowiedź a)<br>c) wszystkie z powyższych]]></description>
-				<styleUrl>#icon-503-0BA9CC</styleUrl>
+				<description><![CDATA[description: Jestem zagadkowym potworem!<br>Question: Coś TAm]]></description>
+				<styleUrl>#icon-503-3F5BA9</styleUrl>
+				<ExtendedData>
+					<Data name='description'>
+						<value>Jestem zagadkowym potworem!</value>
+					</Data>
+					<Data name='Question'>
+						<value>Coś TAm</value>
+					</Data>
+				</ExtendedData>
 				<Point>
 					<coordinates>18.9953399,50.2654581,0.0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
 				<name>Zagadka 2</name>
-				<description><![CDATA[Ja tylko testuję]]></description>
-				<styleUrl>#icon-503-4186F0</styleUrl>
+				<description><![CDATA[description: Co tak sterczysz<br>Question: Coś tam innego]]></description>
+				<styleUrl>#icon-503-3F5BA9</styleUrl>
+				<ExtendedData>
+					<Data name='description'>
+						<value>Co tak sterczysz</value>
+					</Data>
+					<Data name='Question'>
+						<value>Coś tam innego</value>
+					</Data>
+				</ExtendedData>
 				<Point>
-					<coordinates>18.9961284,50.2661268,0.0</coordinates>
+					<coordinates>18.995924600000002,50.2663085,0.0</coordinates>
 				</Point>
 			</Placemark>
 		</Folder>
-		<Style id='icon-503-0BA9CC-normal'>
+		<Folder>
+			<name>path</name>
+			<Placemark>
+				<name>Directions from Koniec! to Czy na pewno?</name>
+				<styleUrl>#line-1267FF-5-nodesc</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>18.99874,50.26459,0.0 18.9988,50.26457,0.0 18.99895,50.26451,0.0 18.99934,50.26436,0.0 18.99956,50.26428,0.0 18.99965,50.26426,0.0 18.99973,50.26425,0.0 18.9998,50.26424,0.0 18.99989,50.26423,0.0 18.99996,50.26422,0.0 19.00004,50.26422,0.0 19.00011,50.26423,0.0 19.00017,50.26423,0.0 19.00024,50.26424,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Koniec!</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<Point>
+					<coordinates>18.9987433,50.2645901,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Czy na pewno?</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<Point>
+					<coordinates>19.0002439,50.2642404,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Style id='icon-503-3F5BA9-normal'>
 			<IconStyle>
-				<color>ffCCA90B</color>
+				<color>ffA95B3F</color>
 				<scale>1.1</scale>
 				<Icon>
 					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
@@ -146,9 +235,9 @@
 				<scale>0.0</scale>
 			</LabelStyle>
 		</Style>
-		<Style id='icon-503-0BA9CC-highlight'>
+		<Style id='icon-503-3F5BA9-highlight'>
 			<IconStyle>
-				<color>ffCCA90B</color>
+				<color>ffA95B3F</color>
 				<scale>1.1</scale>
 				<Icon>
 					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
@@ -160,52 +249,14 @@
 				<scale>1.1</scale>
 			</LabelStyle>
 		</Style>
-		<StyleMap id='icon-503-0BA9CC'>
+		<StyleMap id='icon-503-3F5BA9'>
 			<Pair>
 				<key>normal</key>
-				<styleUrl>#icon-503-0BA9CC-normal</styleUrl>
+				<styleUrl>#icon-503-3F5BA9-normal</styleUrl>
 			</Pair>
 			<Pair>
 				<key>highlight</key>
-				<styleUrl>#icon-503-0BA9CC-highlight</styleUrl>
-			</Pair>
-		</StyleMap>
-		<Style id='icon-503-4186F0-normal'>
-			<IconStyle>
-				<color>ffF08641</color>
-				<scale>1.1</scale>
-				<Icon>
-					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
-				</Icon>
-				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
-				</hotSpot>
-			</IconStyle>
-			<LabelStyle>
-				<scale>0.0</scale>
-			</LabelStyle>
-		</Style>
-		<Style id='icon-503-4186F0-highlight'>
-			<IconStyle>
-				<color>ffF08641</color>
-				<scale>1.1</scale>
-				<Icon>
-					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
-				</Icon>
-				<hotSpot x='16' y='31' xunits='pixels' yunits='insetPixels'>
-				</hotSpot>
-			</IconStyle>
-			<LabelStyle>
-				<scale>1.1</scale>
-			</LabelStyle>
-		</Style>
-		<StyleMap id='icon-503-4186F0'>
-			<Pair>
-				<key>normal</key>
-				<styleUrl>#icon-503-4186F0-normal</styleUrl>
-			</Pair>
-			<Pair>
-				<key>highlight</key>
-				<styleUrl>#icon-503-4186F0-highlight</styleUrl>
+				<styleUrl>#icon-503-3F5BA9-highlight</styleUrl>
 			</Pair>
 		</StyleMap>
 		<Style id='icon-503-DB4436-normal'>

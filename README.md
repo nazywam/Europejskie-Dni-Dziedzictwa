@@ -13,7 +13,7 @@
   * google maps api
   * natywne programowanie na platformę mobilną android
 * efekt społecznościowy (social impact)
-  * zachęca rodziny do spedzania razem czasu na świerzym powietrzu
+  * zachęca rodziny do spedzania razem czasu na świeżym powietrzu
   * prawdopodbnie wzbudzi wiele opowieści i wspomnień jeśli gra będzie przeżywana z dziadkami
   * pokazanie, że nauka historii nie musi być nudna
   

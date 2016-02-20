@@ -41,6 +41,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private MapParser parser;
 
+    private View quizView;
+    private View monumentView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +56,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        quizView = findViewById(R.id.quiz_view);
+        monumentView = findViewById(R.id.monument_view);
+        quizView.setVisibility(View.GONE);
+        monumentView.setVisibility(View.GONE);
     }
 
     @Override

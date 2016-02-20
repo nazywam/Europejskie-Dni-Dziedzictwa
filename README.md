@@ -1,6 +1,7 @@
 ### HACK SILESIA #2 - ZNAJDŹ MNIE ###
 
-![alt text][logo]
+![logo]
+
 
 * Do kogo kierowana jest ta aplikacja
   * do dzieci i rodzin z okolic Katowic, które chcą lepiej poznać region w którym mieszkają
@@ -22,9 +23,21 @@
   * kod jest otwarty na githubie
   * mapy są pobierane wprost z KML'a generowanego przez maps.google.com
   
-Tworzenie map za pomocą google maps!
+##### Tworzenie map za pomocą google maps!
 
 ![alt text][tworzeniemapy]
 
+##### Ikonki punktów dopasowane do atrakcji
+![iko2] ![iko3] ![iko3] ![iko4] 
+
+##### Screen
+![screen1]
+
 [tworzeniemapy]: ./screens/konstruowanietrasy.png
 [logo]: ./screens/logo.png
+[iko2]: ./screens/ikony-02.png
+[iko3]: ./screens/ikony-03.png
+[iko4]: ./screens/ikony-04.png
+[iko5]: ./screens/ikony-05.png
+[iko6]: ./screens/ikony-06.png
+[screen1]: ./screens/screen1.png

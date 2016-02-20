@@ -6,4 +6,5 @@
     <string name="kontakt_api_key">asdf</string>
     <string name="beacon_in_range">Beacon in range</string>
     <string name="beacon_not_in_range">Beacon not in range</string>
+    <string name="welcome_message">Stworzenie programu mobilnego wydarzenia w trakcie Europejskich Dni Dziedzictwa tj. 10-11.IX. I 17-18.IX.2016 na terenie Katowic uwzględniającego: Izbę Tradycji Hutniczej, 2 wystawy Grupy Janowskiej, edukacyjną ścieżkę leśną na terenie Nadleśnictwa Katowice i inne ciekawe historycznie miejsca oraz wakacyjny konkurs \"Znajdź mnie 3\"</string>
 </resources>

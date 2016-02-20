@@ -96,6 +96,12 @@ public class UserHandler extends DefaultHandler {
                 mapRiddles.get(mapRiddles.size()-1).answer[2] = new String(ch, start, length);
             } else if(dataName.equalsIgnoreCase("CorrectAns")){
                 mapRiddles.get(mapRiddles.size()-1).correctAns = Integer.parseInt(new String(ch, start, length));
+            } else if(dataName.equalsIgnoreCase("image")){
+                if(folderType.equalsIgnoreCase("points")){
+                    mapLocations.get(mapLocations.size()-1).imagePath = new String(ch, start, length);
+                } else if(folderType.equalsIgnoreCase("riddle")){
+                    mapRiddles.get(mapRiddles.size()-1).imagePath = new String(ch, start, length);
+                }
             }
         }
 

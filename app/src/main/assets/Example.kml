@@ -7,7 +7,7 @@
 			<name>points</name>
 			<Placemark>
 				<name>Start</name>
-				<description><![CDATA[description: Przygotuj się!<br>BeaconId: R1hw]]></description>
+				<description><![CDATA[description: Przygotuj się!<br>BeaconId: R1hw<br>Image: cat.png]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -16,6 +16,9 @@
 					<Data name='BeaconId'>
 						<value>R1hw</value>
 					</Data>
+					<Data name='Image'>
+						<value>cat.png</value>
+					</Data>
 				</ExtendedData>
 				<Point>
 					<coordinates>18.9956939,50.2644568,0.0</coordinates>
@@ -23,7 +26,7 @@
 			</Placemark>
 			<Placemark>
 				<name>Idzie dobrze...</name>
-				<description><![CDATA[description: Całkiem niezły początek!<br>BeaconId: 04EJ]]></description>
+				<description><![CDATA[description: Całkiem niezły początek!<br>BeaconId: 04EJ<br>Image: cat.png]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -32,6 +35,9 @@
 					<Data name='BeaconId'>
 						<value>04EJ</value>
 					</Data>
+					<Data name='Image'>
+						<value>cat.png</value>
+					</Data>
 				</ExtendedData>
 				<Point>
 					<coordinates>18.9962626,50.2658833,0.0</coordinates>
@@ -39,7 +45,7 @@
 			</Placemark>
 			<Placemark>
 				<name>Prawie u celu</name>
-				<description><![CDATA[description: Nie poddawaj się!<br>BeaconId: qLWV]]></description>
+				<description><![CDATA[description: Nie poddawaj się!<br>BeaconId: qLWV<br>Image: cat.png]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -48,6 +54,9 @@
 					<Data name='BeaconId'>
 						<value>qLWV</value>
 					</Data>
+					<Data name='Image'>
+						<value>cat.png</value>
+					</Data>
 				</ExtendedData>
 				<Point>
 					<coordinates>18.9972925,50.2653552,0.0</coordinates>
@@ -55,7 +64,7 @@
 			</Placemark>
 			<Placemark>
 				<name>Koniec!</name>
-				<description><![CDATA[description: Jesteś zwyciężcą<br>BeaconId: ekri]]></description>
+				<description><![CDATA[description: Jesteś zwyciężcą<br>BeaconId: ekri<br>Image: cat.png]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -64,6 +73,9 @@
 					<Data name='BeaconId'>
 						<value>ekri</value>
 					</Data>
+					<Data name='Image'>
+						<value>cat.png</value>
+					</Data>
 				</ExtendedData>
 				<Point>
 					<coordinates>18.9987409,50.2645871,0.0</coordinates>
@@ -71,7 +83,7 @@
 			</Placemark>
 			<Placemark>
 				<name>Czy na pewno?</name>
-				<description><![CDATA[description: ;)<br>BeaconId: ]]></description>
+				<description><![CDATA[description: ;)<br>BeaconId: <br>Image: cat.png]]></description>
 				<styleUrl>#icon-503-DB4436</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -79,6 +91,9 @@
 					</Data>
 					<Data name='BeaconId'>
 						<value></value>
+					</Data>
+					<Data name='Image'>
+						<value>cat.png</value>
 					</Data>
 				</ExtendedData>
 				<Point>
@@ -165,7 +180,7 @@
 			<name>riddle</name>
 			<Placemark>
 				<name>Zagadka 1</name>
-				<description><![CDATA[description: Jestem zagadkowym potworem!<br>Question: Ile słoni ma żarówka<br>Ans1: 0<br>Ans2: 1<br>Ans3: wszystkie<br>CorrectAns: 1]]></description>
+				<description><![CDATA[description: Jestem zagadkowym potworem!<br>Question: Ile słoni ma żarówka<br>Ans1: 0<br>Ans2: 1<br>Ans3: wszystkie<br>CorrectAns: 1<br>Image: dog.png]]></description>
 				<styleUrl>#icon-503-3F5BA9</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -186,6 +201,9 @@
 					<Data name='CorrectAns'>
 						<value>1</value>
 					</Data>
+					<Data name='Image'>
+						<value>dog.png</value>
+					</Data>
 				</ExtendedData>
 				<Point>
 					<coordinates>18.9953399,50.2654581,0.0</coordinates>
@@ -193,7 +211,7 @@
 			</Placemark>
 			<Placemark>
 				<name>Zagadka 2</name>
-				<description><![CDATA[description: Co tak sterczysz<br>Question: Coś tam innego<br>Ans1: Tak<br>Ans2: Może<br>Ans3: Nie<br>CorrectAns: 3]]></description>
+				<description><![CDATA[description: Co tak sterczysz<br>Question: Coś tam innego<br>Ans1: Tak<br>Ans2: Może<br>Ans3: Nie<br>CorrectAns: 3<br>Image: dog.png]]></description>
 				<styleUrl>#icon-503-3F5BA9</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -213,6 +231,9 @@
 					</Data>
 					<Data name='CorrectAns'>
 						<value>3</value>
+					</Data>
+					<Data name='Image'>
+						<value>dog.png</value>
 					</Data>
 				</ExtendedData>
 				<Point>

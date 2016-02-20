@@ -83,7 +83,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         for(MapPath mp : parser.getUserHandler().mapPaths){
 
             PolylineOptions o = new PolylineOptions();
-            o.width(10).color(0x3068FF);
+            o.width(10).color(0xFF3068FF);
             for(MapPoint p : mp.coordinates){
                 o.add(new LatLng(p.longitude, p.latitude));
             }

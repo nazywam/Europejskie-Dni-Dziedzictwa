@@ -81,26 +81,6 @@
 					<coordinates>19.0797704,50.2626659,0.0</coordinates>
 				</Point>
 			</Placemark>
-			<Placemark>
-				<name>Miejski Dom Kultury Szopienice
-</name>
-				<description><![CDATA[description: <br>beaconId: 12345<br>image: modern1.png]]></description>
-				<styleUrl>#icon-503-DB4436</styleUrl>
-				<ExtendedData>
-					<Data name='description'>
-						<value></value>
-					</Data>
-					<Data name='beaconId'>
-						<value>12345</value>
-					</Data>
-					<Data name='image'>
-						<value>modern1.png</value>
-					</Data>
-				</ExtendedData>
-				<Point>
-					<coordinates>19.0778392,50.2703082,0.0</coordinates>
-				</Point>
-			</Placemark>
 		</Folder>
 		<Folder>
 			<name>path</name>
@@ -214,7 +194,7 @@
 			</Placemark>
 			<Placemark>
 				<name>Zagadka 2</name>
-				<description><![CDATA[description: Ile drzew znajduje się z zagajniku<br>question: 7<br>ans1: 7<br>ans2: 13<br>ans3: 19<br>correctAns: 3<br>image: modern3.png]]></description>
+				<description><![CDATA[description: Ile drzew znajduje się z zagajniku<br>question: 7<br>ans1: 7<br>ans2: 18<br>ans3: 19<br>correctAns: 3<br>image: modern3.png]]></description>
 				<styleUrl>#icon-503-93D7E8</styleUrl>
 				<ExtendedData>
 					<Data name='description'>
@@ -227,7 +207,7 @@
 						<value>7</value>
 					</Data>
 					<Data name='ans2'>
-						<value>13</value>
+						<value>18</value>
 					</Data>
 					<Data name='ans3'>
 						<value>19</value>
@@ -241,33 +221,6 @@
 				</ExtendedData>
 				<Point>
 					<coordinates>19.119204200000002,50.2638806,0.0</coordinates>
-				</Point>
-			</Placemark>
-		</Folder>
-		<Folder>
-			<name>path</name>
-			<Placemark>
-				<name>Directions from Walcownia Cynku to Miejski Dom Kultury Szopienice
-</name>
-				<styleUrl>#line-1267FF-5-nodesc</styleUrl>
-				<LineString>
-					<tessellate>1</tessellate>
-					<coordinates>19.07977,50.26267,0.0 19.079670000000004,50.2627,0.0 19.07964,50.26271,0.0 19.07921,50.26285,0.0 19.07896,50.26294,0.0 19.07888,50.26297,0.0 19.07886,50.26298,0.0 19.07881,50.26302,0.0 19.0788,50.26306,0.0 19.07881,50.26311,0.0 19.07884,50.26318,0.0 19.07884,50.26319,0.0 19.07888,50.26330000000001,0.0 19.07889,50.26338,0.0 19.07888,50.26345,0.0 19.07888,50.26346,0.0 19.07886,50.26354,0.0 19.07879,50.26375,0.0 19.07876,50.2638,0.0 19.07818,50.26372,0.0 19.07753,50.26362,0.0 19.07729,50.26357,0.0 19.07696,50.26349,0.0 19.07602,50.26326,0.0 19.07507,50.263000000000005,0.0 19.07403,50.26265000000001,0.0 19.07258,50.26214,0.0 19.07249,50.26214,0.0 19.072370000000003,50.26212,0.0 19.07233,50.26212,0.0 19.07228,50.26212,0.0 19.07197,50.26215,0.0 19.07176,50.26216,0.0 19.07186,50.26272,0.0 19.07189,50.26287000000001,0.0 19.0719,50.26291,0.0 19.07196,50.2632,0.0 19.07203,50.2635,0.0 19.07208,50.26374,0.0 19.07217,50.26412,0.0 19.07226,50.26436,0.0 19.07227,50.2644,0.0 19.07235,50.26455,0.0 19.0724,50.26468,0.0 19.07247,50.26478,0.0 19.07255,50.2649,0.0 19.07262,50.26499,0.0 19.0727,50.26509,0.0 19.07281,50.26519,0.0 19.07293,50.26532,0.0 19.07306,50.26544,0.0 19.07325,50.265600000000006,0.0 19.07342,50.26571,0.0 19.07356,50.26581,0.0 19.07393,50.26601,0.0 19.07442,50.26623,0.0 19.07444,50.26624,0.0 19.07647,50.26718,0.0 19.07734,50.26759,0.0 19.07748,50.267680000000006,0.0 19.07757,50.26774,0.0 19.07774,50.2679,0.0 19.07784,50.26801,0.0 19.07772,50.26806,0.0 19.07762,50.26817,0.0 19.07761,50.26819,0.0 19.07761,50.2682,0.0 19.07761,50.26821,0.0 19.07761,50.26822,0.0 19.07762,50.26823,0.0 19.07762,50.26824,0.0 19.07763,50.26824,0.0 19.07769,50.26827,0.0 19.07778,50.26832,0.0 19.07779,50.268330000000006,0.0 19.07827,50.2688,0.0 19.07869,50.26918,0.0 19.07896,50.2694,0.0 19.07897,50.269760000000005,0.0 19.07861,50.26986,0.0 19.07839,50.2699,0.0 19.07824,50.26993000000001,0.0 19.07819,50.26995,0.0 19.07803,50.26998,0.0 19.07769,50.27007,0.0</coordinates>
-				</LineString>
-			</Placemark>
-			<Placemark>
-				<name>Walcownia Cynku</name>
-				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
-				<Point>
-					<coordinates>19.0797745,50.2626717,0.0</coordinates>
-				</Point>
-			</Placemark>
-			<Placemark>
-				<name>Miejski Dom Kultury Szopienice
-</name>
-				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
-				<Point>
-					<coordinates>19.0776944,50.2700669,0.0</coordinates>
 				</Point>
 			</Placemark>
 		</Folder>

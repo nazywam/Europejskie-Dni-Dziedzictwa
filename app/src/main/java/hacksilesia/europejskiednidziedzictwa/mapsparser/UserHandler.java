@@ -9,7 +9,6 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.ArrayList;
 
 public class UserHandler extends DefaultHandler {
-
     String folderType = "";
     String dataName = "";
 
@@ -60,7 +59,6 @@ public class UserHandler extends DefaultHandler {
         if (nameTag.equalsIgnoreCase("open") && folderTag == "open"){
             if(placeMarkerTag == "close"){
                 folderType = new String(ch, start, length);
-                Log.d("PATHEEE", "FolderName = "+ folderType + "\n");
             } else {
                 String nodeName = new String(ch, start, length);
                 if(folderType.equalsIgnoreCase("points")){
@@ -69,8 +67,6 @@ public class UserHandler extends DefaultHandler {
                     locationIterator++;
 
                 } else if(folderType.equalsIgnoreCase("path")) {
-                    Log.d("PATHEEE", "New Path segment: " + nodeName + "\n");
-
                     MapPath p = new MapPath(pathsIterator);
                     mapPaths.add(p);
                     pathsIterator++;
@@ -94,7 +90,6 @@ public class UserHandler extends DefaultHandler {
         }
 
         if(coordinatesTag == "open"){
-
             if(folderType.equalsIgnoreCase("points")){
                 String[] loc = new String(ch, start, length).split(",");
                 mapLocations.get(mapLocations.size()-1).latitude = Float.parseFloat(loc[0]);

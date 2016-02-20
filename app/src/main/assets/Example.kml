@@ -69,6 +69,22 @@
 					<coordinates>18.9987409,50.2645871,0.0</coordinates>
 				</Point>
 			</Placemark>
+			<Placemark>
+				<name>Czy na pewno?</name>
+				<description><![CDATA[description: ;)<br>BeaconId: ]]></description>
+				<styleUrl>#icon-503-DB4436</styleUrl>
+				<ExtendedData>
+					<Data name='description'>
+						<value>;)</value>
+					</Data>
+					<Data name='BeaconId'>
+						<value></value>
+					</Data>
+				</ExtendedData>
+				<Point>
+					<coordinates>19.0002429,50.2642442,0.0</coordinates>
+				</Point>
+			</Placemark>
 		</Folder>
 		<Folder>
 			<name>path</name>
@@ -177,6 +193,31 @@
 				</ExtendedData>
 				<Point>
 					<coordinates>18.995924600000002,50.2663085,0.0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+		<Folder>
+			<name>path</name>
+			<Placemark>
+				<name>Directions from Koniec! to Czy na pewno?</name>
+				<styleUrl>#line-1267FF-5-nodesc</styleUrl>
+				<LineString>
+					<tessellate>1</tessellate>
+					<coordinates>18.99874,50.26459,0.0 18.9988,50.26457,0.0 18.99895,50.26451,0.0 18.99934,50.26436,0.0 18.99956,50.26428,0.0 18.99965,50.26426,0.0 18.99973,50.26425,0.0 18.9998,50.26424,0.0 18.99989,50.26423,0.0 18.99996,50.26422,0.0 19.00004,50.26422,0.0 19.00011,50.26423,0.0 19.00017,50.26423,0.0 19.00024,50.26424,0.0</coordinates>
+				</LineString>
+			</Placemark>
+			<Placemark>
+				<name>Koniec!</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<Point>
+					<coordinates>18.9987433,50.2645901,0.0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Czy na pewno?</name>
+				<styleUrl>#icon-503-DB4436-nodesc</styleUrl>
+				<Point>
+					<coordinates>19.0002439,50.2642404,0.0</coordinates>
 				</Point>
 			</Placemark>
 		</Folder>

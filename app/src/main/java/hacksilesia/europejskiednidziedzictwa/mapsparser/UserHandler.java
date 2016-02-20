@@ -16,6 +16,7 @@ public class UserHandler extends DefaultHandler {
     String nameTag = "close";
     String placeMarkerTag = "close";
     String coordinatesTag = "close";
+    String descriptionTag = "close";
 
     public ArrayList<MapLocation> mapLocations = new ArrayList<MapLocation>();
     public ArrayList<MapPath> mapPaths = new ArrayList<MapPath>();
@@ -40,6 +41,9 @@ public class UserHandler extends DefaultHandler {
         if(qName.equalsIgnoreCase("coordinates")){
             coordinatesTag = "open";
         }
+        if(qName.equalsIgnoreCase("description")){
+            descriptionTag= "open";
+        }
     }
     @Override
     public void characters(char ch[], int start, int length) throws SAXException {
@@ -50,26 +54,38 @@ public class UserHandler extends DefaultHandler {
             } else {
                 String nodeName = new String(ch, start, length);
                 if(folderType.equalsIgnoreCase("points")){
-                    Log.d("PATHEEE", "New Point with name: " + nodeName + "\n");
-                } else if(folderType.equalsIgnoreCase("path")){
+                    MapLocation l = new MapLocation(nodeName, locationIterator);
+                    mapLocations.add(l);
+                    locationIterator++;
+
+                } else if(folderType.equalsIgnoreCase("path")) {
                     Log.d("PATHEEE", "New Path segment: " + nodeName + "\n");
 
                     MapPath p = new MapPath(pathsIterator);
                     mapPaths.add(p);
                     pathsIterator++;
+                } else if(folderType.equalsIgnoreCase("riddle")){
+                    MapRiddle r = new MapRiddle(nodeName, riddleIterator);
+                    riddleIterator++;
+                    mapRiddles.add(r);
                 }
             }
         }
-        if(coordinatesTag == "open"){
-            Log.d("PATHEEE", "Coords: " + new String(ch, start, length) + "\n");
+        if(descriptionTag == "open"){
+            Log.d("USING", "DESCRIPTION"+nameTag);
 
+            if(folderType.equalsIgnoreCase("points")){
+                mapLocations.get(mapLocations.size()-1).description = new String(ch, start, length);
+            } else if(folderType.equalsIgnoreCase("riddle")){
+                mapRiddles.get(mapRiddles.size()-1).description = new String(ch, start, length);
+            }
+        }
+        if(coordinatesTag == "open"){
 
             if(folderType.equalsIgnoreCase("points")){
                 String[] loc = new String(ch, start, length).split(",");
-
-                MapLocation l = new MapLocation(Float.parseFloat(loc[0]), Float.parseFloat(loc[1]), locationIterator);
-                mapLocations.add(l);
-                locationIterator++;
+                mapLocations.get(mapLocations.size()-1).latitude = Float.parseFloat(loc[0]);
+                mapLocations.get(mapLocations.size()-1).longitude = Float.parseFloat(loc[1]);
             }
             if(folderType.equalsIgnoreCase("path")){
                 String[] ps = new String(ch, start, length).split(" ");
@@ -82,10 +98,8 @@ public class UserHandler extends DefaultHandler {
             }
             if(folderType.equalsIgnoreCase("riddle")){
                 String[] loc = new String(ch, start, length).split(",");
-
-                MapRiddle r = new MapRiddle(Float.parseFloat(loc[0]), Float.parseFloat(loc[1]), riddleIterator);
-                riddleIterator++;
-                mapRiddles.add(r);
+                mapRiddles.get(mapRiddles.size()-1).latitude = Float.parseFloat(loc[0]);
+                mapRiddles.get(mapRiddles.size()-1).longitude = Float.parseFloat(loc[1]);
             }
         }
     }
@@ -104,6 +118,9 @@ public class UserHandler extends DefaultHandler {
         }
         if(qName.equalsIgnoreCase("coordinates")){
             coordinatesTag = "close";
+        }
+        if(qName.equalsIgnoreCase("description")){
+            descriptionTag = "close";
         }
     }
 }

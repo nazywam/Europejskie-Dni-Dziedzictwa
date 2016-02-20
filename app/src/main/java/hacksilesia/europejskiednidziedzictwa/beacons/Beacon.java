@@ -62,7 +62,7 @@ public class Beacon implements ProximityManager.ProximityListener {
                 Log.d(TAG, "updated beacons");
                 for (RemoteBluetoothDevice i: deviceList)
                 {
-                  Log.d(""+deviceList.getUniqueId())
+                  Log.d("TEST"+i.getUniqueId(), "TEST");
                 }
                 //to powinnismy sprawdzic czy to odpowiednii beacon i wysunąc menu
                 //okienko

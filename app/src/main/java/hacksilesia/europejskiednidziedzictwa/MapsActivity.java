@@ -18,6 +18,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
@@ -44,7 +45,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
     }
 
     @Override
@@ -58,22 +58,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // Show rationale and request permission.
         }
 
-/*
-        for(MapPath mp : parser.getUserHandler().mapPaths)
-        {
-            Log.d("PATHEEE", "path");
-            PolylineOptions rectOptions = new PolylineOptions();
-            Log.d("PATHEEEs", "size: " + mp.coordinates.size());
-            for(MapPoint ml : mp.coordinates)
-            {
-                rectOptions.add(new LatLng(ml.latitude, ml.longitude));
-                Log.d("PATHEEE", "coord " + ml.latitude + " " + ml.longitude);
-            }
-            mMap.addPolyline(rectOptions);
-        }
-        */
-        for(MapPoint mp : parser.getUserHandler().mapLocations){
-            mMap.addMarker(new MarkerOptions().position(new LatLng(mp.longitude, mp.latitude)));
+        for(MapLocation mp : parser.getUserHandler().mapLocations){
+            Marker m = mMap.addMarker(new MarkerOptions().title(mp.name).snippet(mp.description).position(new LatLng(mp.longitude, mp.latitude)));
         }
         for(MapPath mp : parser.getUserHandler().mapPaths){
             PolylineOptions o = new PolylineOptions();
@@ -84,6 +70,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
             mMap.addPolyline(o);
         }
+
+        for(MapRiddle mr : parser.getUserHandler().mapRiddles){
+            Marker m = mMap.addMarker(new MarkerOptions().title(mr.name).snippet(mr.description).position(new LatLng(mr.longitude, mr.latitude)));
+        }
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(50.2644568, 18.9956939)));
         mMap.moveCamera(CameraUpdateFactory.zoomTo(17.0f));
     }

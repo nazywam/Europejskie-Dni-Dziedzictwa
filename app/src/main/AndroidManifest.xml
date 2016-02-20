@@ -55,7 +55,6 @@
             android:name=".QuestABC"
             android:label="@string/title_activity_quest_abc"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
     </application>
 

@@ -31,7 +31,6 @@ public class UserHandler extends DefaultHandler {
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        Log.d("PATHEEE", "start");
         if (qName.equalsIgnoreCase("folder")) {
             folderTag = "open";
         }

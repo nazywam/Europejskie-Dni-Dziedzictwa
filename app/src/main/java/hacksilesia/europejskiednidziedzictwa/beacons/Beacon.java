@@ -50,20 +50,14 @@ public class Beacon implements ProximityManager.ProximityListener {
         long timestamp = bluetoothDeviceEvent.getTimestamp();
         DeviceProfile deviceProfile = bluetoothDeviceEvent.getDeviceProfile();
         switch (bluetoothDeviceEvent.getEventType()) {
-            case SPACE_ENTERED:
-                Log.d(TAG, "namespace or region entered");
-                callbacks.onSpaceEntered();
-                break;
             case DEVICE_DISCOVERED:
-                Log.d(TAG, "found new beacon");
                 for (RemoteBluetoothDevice i: deviceList) {
                     Log.d("Discovered "+i.getUniqueId(), "");
                 }
-                callbacks.onDeviceDiscovered();
+                callbacks.onDeviceDiscovered(deviceList);
 
                 break;
             case DEVICES_UPDATE:
-                Log.d(TAG, "updated beacons");
                 /*
                 final QuestABC that = this;
                 runOnUiThread(new Runnable() {
@@ -77,16 +71,6 @@ public class Beacon implements ProximityManager.ProximityListener {
                     }
                 });
                 */
-                callbacks.onBeaconUpdate();
-                break;
-            case DEVICE_LOST:
-                Log.d(TAG, "lost device");
-                callbacks.onDeviceLost();
-                break;
-            case SPACE_ABANDONED:
-                //opuszczamy nasz region schowaj menu
-                Log.d(TAG, "namespace or region abandoned");
-                callbacks.onSpaceAbandoned();
                 break;
         }
     }

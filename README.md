@@ -1,5 +1,7 @@
 ### HACK SILESIA #2 - ZNAJDŹ MNIE ###
 
+![alt text][logo]
+
 * Do kogo kierowana jest ta aplikacja
   * do dzieci i rodzin z okolic Katowic, które chcą lepiej poznać region w którym mieszkają
 * Co wnosi dobrego?
@@ -25,3 +27,4 @@ Tworzenie map za pomocą google maps!
 ![alt text][tworzeniemapy]
 
 [tworzeniemapy]: ./screens/konstruowanietrasy.png
+[logo]: ./screens/logo.png

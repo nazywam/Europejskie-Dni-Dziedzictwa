@@ -75,7 +75,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
 
             Bitmap icon = BitmapFactory.decodeStream(is);
-            Bitmap scaled = Bitmap.createScaledBitmap(icon, 64, 64, false);
+            Bitmap scaled = Bitmap.createScaledBitmap(icon, 96, 96, false);
             Marker m = mMap.addMarker(new MarkerOptions().title(mp.name).icon(BitmapDescriptorFactory.fromBitmap(scaled)).snippet(mp.description).position(new LatLng(mp.longitude, mp.latitude)));
         }
         for(MapPath mp : parser.getUserHandler().mapPaths){
@@ -98,7 +98,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
 
             Bitmap icon = BitmapFactory.decodeStream(is);
-            Bitmap scaled = Bitmap.createScaledBitmap(icon, 64, 64, false);
+            Bitmap scaled = Bitmap.createScaledBitmap(icon, 96, 96, false);
             Marker m = mMap.addMarker(new MarkerOptions().title(mr.name).icon(BitmapDescriptorFactory.fromBitmap(scaled)).snippet(mr.description).position(new LatLng(mr.longitude, mr.latitude)));
         }
 
